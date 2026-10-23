@@ -1,0 +1,88 @@
+{
+  "durations_ms": [
+    4500,
+    6500,
+    4500,
+    4500,
+    5000,
+    5000
+  ],
+  "scenes": {
+    "en": [
+      [
+        "A new task",
+        "USER",
+        "Build a CSV import feature with required-column validation and ordinary tests.",
+        "A bounded task. Start with a direction."
+      ],
+      [
+        "A short recommendation",
+        "PREFLIGHT",
+        "Routine · GPT-6.1 Sol / Medium / Standard, if available.\nWhy: clear scope and familiar validation.\nEscalate if conflicting requirements emerge.",
+        "Choose settings, then continue. Or keep current settings."
+      ],
+      [
+        "You choose",
+        "MANUAL ACTION",
+        "Select your preferred model and effort in the client. The skill does not control the model picker.",
+        "A suggestion, with the choice in your hands."
+      ],
+      [
+        "One word is enough",
+        "USER",
+        "Continue.",
+        "Accept execution. No assertion that a switch was verified."
+      ],
+      [
+        "Back to work",
+        "EXPECTED BEHAVIOR",
+        "Proceed with the original implementation and its required checks, without another model-selection question.",
+        "One selection step for this task."
+      ],
+      [
+        "Small follow-up",
+        "USER",
+        "Rename this one heading.\n\nExpected: make the small edit, without a fresh preflight.",
+        "Model choice, before the work starts."
+      ]
+    ],
+    "zh": [
+      [
+        "一个独立大任务",
+        "用户",
+        "做一个CSV导入功能，包含必填列校验和常规测试。",
+        "边界明确的任务，先给一个起步方向。"
+      ],
+      [
+        "三行选型建议",
+        "PREFLIGHT",
+        "常规 · GPT-6.1 Sol / Medium / Standard（如可用）\n理由：范围明确，主要是实现与校验。\n升级条件：出现冲突需求时再评估。",
+        "选择后回复“继续”，也可按当前设置继续。"
+      ],
+      [
+        "由你选择",
+        "手动操作",
+        "你在客户端选择模型和推理档位。\n技能不会控制选择器或替你切换。",
+        "建议清楚，选择仍在你手里。"
+      ],
+      [
+        "回复即可继续",
+        "用户",
+        "继续。",
+        "接受执行，不声称已经验证模型切换。"
+      ],
+      [
+        "回到原任务",
+        "预期行为",
+        "继续原来的实现和必要检查，\n不再重复询问本轮模型配置。",
+        "这个任务只做一次选择。"
+      ],
+      [
+        "普通追问保持安静",
+        "用户",
+        "把这一个标题改一下。\n\n预期：直接处理小改，不重新分档。",
+        "大任务开工前，给你一句有依据的建议。"
+      ]
+    ]
+  }
+}

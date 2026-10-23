@@ -1,0 +1,39 @@
+name: Recommendation or trigger feedback
+description: Report a wrong recommendation, repeated pause, or missing trigger using a sanitized example.
+title: "[Feedback] "
+body:
+  - type: input
+    id: client
+    attributes:
+      label: Codex client, version, and install method
+      placeholder: "Desktop or CLI; version; Skills CLI or manual"
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: Sanitized task and relevant conversation state
+      description: "Include whether this was a new task, a follow-up, or after accepting settings. Do not upload private logs."
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Actual recommendation or pause behavior
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior and reason
+    validations:
+      required: true
+  - type: dropdown
+    id: retention
+    attributes:
+      label: Still using the skill? (optional)
+      options:
+        - "Not answered"
+        - "Trying it now"
+        - "Still using after one week"
+        - "Stopped using it"

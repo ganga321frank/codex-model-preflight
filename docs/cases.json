@@ -1,0 +1,122 @@
+[
+  {
+    "id": "01",
+    "title": "Large explicit-rule batch / 大批量明确规则",
+    "state": "New task; no selection yet / 新任务未选档",
+    "prompt": "Extract the same 12 named columns from 200 CSV files, preserve row order, and report row counts. / 从200份CSV提取固定12列，保留行序并核对行数。",
+    "expected": "Simple · GPT-6 Luna / Medium / Standard, if available.",
+    "pause": true,
+    "why": "Volume does not add judgment when the rule and checks are explicit. / 文件多不等于推理难。",
+    "check": "Recommend before reading every file; no blanket flagship upgrade. / 不先通读全部文件、不因数量升到旗舰。"
+  },
+  {
+    "id": "02",
+    "title": "Deterministic conversion / 确定格式转换",
+    "state": "New batch deliverable / 新批量交付",
+    "prompt": "Convert 40 Markdown notes to plain text with a fixed naming rule; verify file counts. / 按固定命名规则将40份Markdown转为纯文本并核对数量。",
+    "expected": "Simple · GPT-6 Luna / Low / Standard, if available.",
+    "pause": true,
+    "why": "Known transformation with simple acceptance checks. / 规则明确且容易核验。",
+    "check": "Retain the count check; do not read unrelated projects. / 保留数量检查，不扫描无关项目。"
+  },
+  {
+    "id": "03",
+    "title": "Bounded report / 常规报告",
+    "state": "New deliverable / 新成果",
+    "prompt": "Turn these three project updates into a two-page progress report using the supplied headings. / 将3份项目更新按指定标题汇成2页进展报告。",
+    "expected": "Routine · GPT-6.1 Sol / Medium / Standard, if available.",
+    "pause": true,
+    "why": "Requires coordination and editing with a clear structure. / 需要组织内容，但结构明确。",
+    "check": "One recommendation with a concrete reason; no menu of six models. / 给一个配置，不列一串型号让用户再判断。"
+  },
+  {
+    "id": "04",
+    "title": "Small feature / 普通功能开发",
+    "state": "New feature / 新功能",
+    "prompt": "Add a CSV import endpoint to an existing app, validate required columns, and add ordinary error-path tests. / 为现有应用增加CSV导入接口、必填列校验和常规错误测试。",
+    "expected": "Routine · GPT-6.1 Sol / Medium / Standard, if available.",
+    "pause": true,
+    "why": "A bounded implementation with familiar validation. / 边界明确，校验方式常见。",
+    "check": "Pause before editing; keep required tests after acceptance. / 修改前暂停，接受后仍做必要测试。"
+  },
+  {
+    "id": "05",
+    "title": "Linked reconciliation / 跨来源核对",
+    "state": "New investigation / 新核对任务",
+    "prompt": "Reconcile three related ledgers with inconsistent dates and identifiers, explain exceptions, and trace each to the supplied source. / 核对3份关联台账的日期与编号差异，逐项解释并追溯原件。",
+    "expected": "Complex · GPT-6.1 Sol / High / Standard, if available.",
+    "pause": true,
+    "why": "Linked constraints require deeper reasoning, but no reason to default to the flagship. / 关联约束多，可先用均衡模型较高推理。",
+    "check": "Retain source checks; reserve escalation for unresolved contradictions. / 保留来源核验，对真正未解冲突再考虑升级。"
+  },
+  {
+    "id": "06",
+    "title": "Ambiguous design choice / 模糊架构判断",
+    "state": "New design decision / 新决策",
+    "prompt": "Compare two incompatible recovery strategies for a distributed system with conflicting consistency and latency requirements. Use the supplied measurements. / 根据已有测量，比较分布式系统中互不兼容的恢复方案，处理一致性和延迟要求的冲突。",
+    "expected": "Complex · GPT-6 Astra / High / Standard, if available.",
+    "pause": true,
+    "why": "The hard part is a specifically identified judgment under conflicting requirements. / 难点明确在冲突要求下取舍。",
+    "check": "No default Ultra or delegated agents; keep alternatives grounded in measurements. / 不默认Ultra或分工，判断以已有测量为依据。"
+  },
+  {
+    "id": "07",
+    "title": "Tiny follow-up / 小追问",
+    "state": "Task already assessed and underway / 已分档并执行中",
+    "prompt": "Rename this one heading to Results. / 把这一个标题改成“结果”。",
+    "expected": "Skip preflight; make the requested small edit. / 跳过分档，直接处理小改。",
+    "pause": false,
+    "why": "No new outcome or reasoning difficulty. / 未形成新成果或推理难点。",
+    "check": "No repeated configuration question. / 不重新询问模型配置。"
+  },
+  {
+    "id": "08",
+    "title": "Accepted continuation / 接受后继续",
+    "state": "Assistant just recommended settings and paused / 刚建议并暂停",
+    "prompt": "Continue. / 继续。",
+    "expected": "Proceed with the existing task. / 继续原任务。",
+    "pause": false,
+    "why": "The reply accepts execution; it does not verify a model switch. / 接受执行，不等于切换已验证。",
+    "check": "No second gate and no claim “I switched your model”. / 不二次拦截，不声称已替用户切换。"
+  },
+  {
+    "id": "09",
+    "title": "Settings chosen upfront / 开始时已选档",
+    "state": "New substantial task, user has specified settings / 新大任务但已指定设置",
+    "prompt": "Use my current GPT-6.1 Sol High settings for this task. Compare the three ledgers and continue directly. / 本轮按我当前Sol High配置核对3份台账，直接继续。",
+    "expected": "Brief Complex advice if useful, then proceed. / 可简短分档，直接执行。",
+    "pause": false,
+    "why": "The user has already made the selection. / 用户已经选择。",
+    "check": "No forced switch to Medium and no extra confirmation. / 不强制降档，不新增确认。"
+  },
+  {
+    "id": "10",
+    "title": "No-pause preference / 不暂停偏好",
+    "state": "New substantial task / 新大任务",
+    "prompt": "Build the small CSV importer. Give a brief model recommendation but don't pause; use current settings. / 做一个小型CSV导入功能，简短给建议但不要暂停，按当前配置做。",
+    "expected": "Routine advice, then proceed using the chosen current-settings preference. / 常规任务建议后按用户选择继续。",
+    "pause": false,
+    "why": "Explicit interaction preference overrides the default selection pause. / 尊重明确的不暂停偏好。",
+    "check": "Do not silently change settings; retain this preference in the conversation only. / 不暗改配置，本对话沿用偏好。"
+  },
+  {
+    "id": "11",
+    "title": "Unknown available model / 可用型号未知",
+    "state": "Advice-only; named guide models unavailable / 只问选型，表内型号不可用",
+    "prompt": "None of the named models in your guide are available. What kind of model should I use for an ordinary CSV import feature? / 表中型号我都没有，普通CSV导入功能该用什么能力等级？",
+    "expected": "Routine · Balanced capability / Medium / Standard where supported. / 常规 · 均衡能力 / Medium / 支持时用Standard。",
+    "pause": false,
+    "why": "Capability advice remains useful without invented names or equivalences. / 不知道型号也能给能力方向。",
+    "check": "No invented exact ID, no claim to know the picker, no request to continue an advice-only answer. / 不编型号、不声称知道选择器、不要求继续。"
+  },
+  {
+    "id": "12",
+    "title": "Missing facts are not a model problem / 缺事实不能靠升档",
+    "state": "Advice-only / 只问建议",
+    "prompt": "The source invoices are missing. Would the strongest model let us complete a definitive reconciliation anyway? / 原始发票缺失，用最强模型能不能照样做确定性的核对结论？",
+    "expected": "No model supplies missing evidence; obtain the sources or limit the conclusion. / 先补来源或限制结论，升档无法补齐事实。",
+    "pause": false,
+    "why": "The blocker is evidence rather than reasoning capacity. / 瓶颈是证据，不是算力。",
+    "check": "No Ultra recommendation as a cure for absent inputs. / 不把Ultra当成缺失输入的补救。"
+  }
+]
