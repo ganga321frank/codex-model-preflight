@@ -6,6 +6,8 @@
 
 [简体中文](README.zh-CN.md) · [12 public cases](docs/cases.md) · [Install](docs/install.md) · [Behavior](docs/behavior.md)
 
+[Find it on skills.sh](https://www.skills.sh/ganga321frank/codex-model-preflight/codex-model-preflight)
+
 Want to try it without a terminal? [Download the friend trial ZIP](downloads/codex-model-preflight-v0.1.0-friends.zip), extract it, and open the included `Codex试用项目` folder in Codex. It includes the project-scoped skill, a fictional CSV task, a Chinese quick-start guide, and a feedback form. This does not change global settings.
 
 ![30-second illustrative chat walkthrough, not a live Codex recording](assets/demo-en.gif)

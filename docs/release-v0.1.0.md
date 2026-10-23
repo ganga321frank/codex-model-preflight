@@ -16,6 +16,8 @@
 
 Local manual and Skills CLI installation, installed-file hashes, native Codex skill discovery, named-skill removal, internal documentation links, archive contents, and all demo frames. The Chinese guides were rendered in WPS and visually reviewed.
 
+Public installation from `ganga321frank/codex-model-preflight` was verified on 2026-10-23 using Skills CLI 1.7.4 in an isolated Windows project. All four installed files match source after line-ending normalization. This machine needed its existing system proxy for Git access; no global settings were changed.
+
 The removal guide includes an observed Skills CLI 1.7.4 shared-directory edge case. Exact evidence and limits are in [validation.md](validation.md).
 
 ## Known limits / 已知边界

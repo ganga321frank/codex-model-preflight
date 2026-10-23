@@ -6,6 +6,8 @@
 
 [English](README.md) · [12 个公开案例](docs/cases.md) · [安装与卸载](docs/install.md) · [使用约定](docs/behavior.md)
 
+[在 skills.sh 查看技能](https://www.skills.sh/ganga321frank/codex-model-preflight/codex-model-preflight)
+
 想先直接试用？[下载朋友试用包](downloads/codex-model-preflight-v0.1.0-friends.zip)，解压后用 Codex 打开其中的“Codex试用项目”文件夹。包内附中文说明、虚构 CSV 任务和反馈表；不需要终端，不改全局配置。[怎样试用](docs/try-it.zh-CN.md)
 
 ![30秒文字流程演示，非Codex真实录屏](assets/demo-zh.gif)
