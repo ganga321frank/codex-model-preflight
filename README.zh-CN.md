@@ -2,13 +2,15 @@
 
 **大任务开始前，给你一次简短、有依据的模型与推理档位建议。**
 
-**v0.1.0 · 试用预览版 · 优先支持 Codex**
+**v0.2.0 · 试用预览版 · 优先支持 Codex**
+**从 v0.1.0 升级：**更新已安装的 Skill，并检查项目指令里的旧强制暂停规则，见[升级步骤](docs/install.md#upgrading-from-v010)。仓库地址与技能名保持不变。
 
-[English](README.md) · [12 个公开案例](docs/cases.md) · [安装与卸载](docs/install.md) · [使用约定](docs/behavior.md)
+
+[English](README.md) · [18 个公开案例](docs/cases.md) · [安装与卸载](docs/install.md) · [使用约定](docs/behavior.md)
 
 [在 skills.sh 查看技能](https://www.skills.sh/ganga321frank/codex-model-preflight/codex-model-preflight)
 
-想先直接试用？[下载朋友试用包](downloads/codex-model-preflight-v0.1.0-friends.zip)，解压后用 Codex 打开其中的“Codex试用项目”文件夹。包内附中文说明、虚构 CSV 任务和反馈表；不需要终端，不改全局配置。[怎样试用](docs/try-it.zh-CN.md)
+想先直接试用？[下载朋友试用包](downloads/codex-model-preflight-v0.2.0-friends.zip)，解压后用 Codex 打开其中的“Codex试用项目”文件夹。包内附中文 TXT 说明、虚构 CSV 任务和反馈表；不需要终端，不改全局配置。[怎样试用](docs/try-it.zh-CN.md)
 
 ![30秒文字流程演示，非Codex真实录屏](assets/demo-zh.gif)
 
@@ -18,15 +20,15 @@
 升级条件：出现冲突需求或难定位的根因时再评估。
 ```
 
-你在选择器里调整后回复“继续”即可。已经选定本轮设置，直接沿用；普通追问不反复提醒。
+默认在进度消息里给出建议后，同一轮立即按当前会话配置继续，不需要回复。想亲自选档时说“先等我选档”。本包不会自动切换模型，也不提供一分钟后自动唤醒。
 
 ## 为什么不自己让 AI 生成一个？
 
 你完全可以自行生成同类技能。这份发布包帮你省去整理与检查的工作：
 
-- **行为约定现成**：大任务暂停一次，接受后继续，也能说“不要暂停”。
+- **行为约定现成**：建议不阻塞执行，需要时明确要求等待选档，普通追问不重复打断。
 - **模型建议可追溯**：独立对应表，标注核对日期与官方依据。
-- **公开案例可检查**：12 个示例同时覆盖应该提醒和应该安静的情况。
+- **公开案例可检查**：18 个示例同时覆盖应该提醒和应该安静的情况。
 - **后续修改有记录**：安装、卸载、版本说明与问题反馈入口一起提供。
 
 这些是可检查的产品特征。我们尚未实证证明它比自行生成的技能更准确，也不承诺固定省额度比例或“最优”选型。提示本身也有上下文和推理开销。
@@ -61,4 +63,4 @@ npx skills add ganga321frank/codex-model-preflight --skill codex-model-preflight
 
 独立社区项目，与 OpenAI 无隶属关系。[MIT 许可证](LICENSE)。
 
-[v0.1.0 发布说明](docs/release-v0.1.0.md)
+[v0.2.0 更新说明](docs/release-v0.2.0.md) · [为什么不采用一分钟超时](docs/interaction.md)

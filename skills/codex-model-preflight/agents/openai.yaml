@@ -1,6 +1,6 @@
 interface:
   display_name: "Codex Model Preflight"
-  short_description: "A brief model recommendation before substantial work"
-  default_prompt: "Use $codex-model-preflight to recommend a model, reasoning effort, and speed for this task."
+  short_description: "Recommend settings without blocking substantial work"
+  default_prompt: "Use $codex-model-preflight to recommend a model, reasoning effort, and speed, then continue my requested task with current session settings unless I explicitly ask to wait."
 policy:
   allow_implicit_invocation: true

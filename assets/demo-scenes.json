@@ -19,25 +19,25 @@
         "A short recommendation",
         "PREFLIGHT",
         "Routine · GPT-6.1 Sol / Medium / Standard, if available.\nWhy: clear scope and familiar validation.\nEscalate if conflicting requirements emerge.",
-        "Choose settings, then continue. Or keep current settings."
+        "Advisory only. Continue now with current session settings."
       ],
       [
-        "You choose",
-        "MANUAL ACTION",
-        "Select your preferred model and effort in the client. The skill does not control the model picker.",
-        "A suggestion, with the choice in your hands."
-      ],
-      [
-        "One word is enough",
-        "USER",
-        "Continue.",
-        "Accept execution. No assertion that a switch was verified."
-      ],
-      [
-        "Back to work",
+        "Work continues",
         "EXPECTED BEHAVIOR",
-        "Proceed with the original implementation and its required checks, without another model-selection question.",
-        "One selection step for this task."
+        "Begin the original implementation and required checks in the same turn. No reply is needed to unblock model selection.",
+        "Current session settings stay in effect."
+      ],
+      [
+        "No automatic switch",
+        "BOUNDARY",
+        "The skill recommends settings; it does not control the model picker or wake up sixty seconds after a finished turn.",
+        "No timer, background service, or automatic model change."
+      ],
+      [
+        "Want a selection pause?",
+        "OPTIONAL USER CHOICE",
+        "Say “wait for me to choose” before work. The assistant waits; “continue” resumes without another selection gate.",
+        "Pause only when explicitly requested."
       ],
       [
         "Small follow-up",
@@ -57,25 +57,25 @@
         "三行选型建议",
         "PREFLIGHT",
         "常规 · GPT-6.1 Sol / Medium / Standard（如可用）\n理由：范围明确，主要是实现与校验。\n升级条件：出现冲突需求时再评估。",
-        "选择后回复“继续”，也可按当前设置继续。"
+        "建议不阻塞：直接按当前会话配置继续。"
       ],
       [
-        "由你选择",
-        "手动操作",
-        "你在客户端选择模型和推理档位。\n技能不会控制选择器或替你切换。",
-        "建议清楚，选择仍在你手里。"
-      ],
-      [
-        "回复即可继续",
-        "用户",
-        "继续。",
-        "接受执行，不声称已经验证模型切换。"
-      ],
-      [
-        "回到原任务",
+        "不用回复，也继续做",
         "预期行为",
-        "继续原来的实现和必要检查，\n不再重复询问本轮模型配置。",
-        "这个任务只做一次选择。"
+        "同一轮开始原任务的实现和必要检查，\n不再因等待选档回复而停工。",
+        "保留当前会话配置，不声称自动切换。"
+      ],
+      [
+        "建议与实际配置要分清",
+        "能力边界",
+        "本技能不控制模型选择器，\n也不能在回复结束60秒后自行唤醒。",
+        "不空等、不装后台服务、不自动改模型。"
+      ],
+      [
+        "需要时再等你选档",
+        "可选手动模式",
+        "明确说“先等我选档”，才暂停等待。\n回复“继续”后执行，不重复询问。",
+        "尊重明确等待，也保留真正必要的授权。"
       ],
       [
         "普通追问保持安静",

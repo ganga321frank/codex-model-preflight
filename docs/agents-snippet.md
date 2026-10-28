@@ -6,7 +6,7 @@ Merge **one** language version below into the target project's existing `AGENTS.
 
 ```markdown
 <!-- codex-model-preflight:start -->
-Before a new substantial task, use $codex-model-preflight to recommend a model, reasoning effort, and speed. Pause once before substantive work unless settings are already chosen/accepted or I ask not to pause. Skip minor follow-ups and accepted continuations; “continue” accepts execution without proving a model switch.
+Before a new substantial task, use $codex-model-preflight to recommend a model, reasoning effort, and speed briefly, then continue the requested work in the same turn with current session settings. Do not wait for a model-selection reply unless I explicitly ask you to wait. Unknown active settings or a different recommendation alone do not block work. Skip minor follow-ups; do not claim a model switch or a one-minute automatic resume. Required permissions and critical missing inputs remain separate.
 <!-- codex-model-preflight:end -->
 ```
 
@@ -14,7 +14,7 @@ Before a new substantial task, use $codex-model-preflight to recommend a model, 
 
 ```markdown
 <!-- codex-model-preflight:start -->
-独立大任务开始前调用 $codex-model-preflight，推荐模型、推理档位与速度，并在实质执行前暂停一次；本任务已选定或接受设置、或我要求不要暂停时直接继续。普通追问和已接受的继续执行不重复分档；“继续”不代表模型切换已验证。
+独立大任务开始前调用 $codex-model-preflight，简短推荐模型、推理档位与速度后，同一轮直接按当前会话配置执行原任务，默认不等选档回复；只有我明确要求“先等我选档”时才暂停。当前配置未知或与建议不同，本身不阻塞执行。普通追问不重复分档；不声称已切换或一分钟后自动唤醒。必要授权与关键资料缺失另按实际规则处理。
 <!-- codex-model-preflight:end -->
 ```
 

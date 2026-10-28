@@ -1,6 +1,6 @@
 ---
 name: codex-model-preflight
-description: Recommend a model, reasoning effort, and speed before a new substantial Codex task or an explicit model-choice request. Pause once for selection; skip minor follow-ups and accepted continuations.
+description: Recommend a model, reasoning effort, and speed before a new substantial Codex task or an explicit model-choice request. Continue with current session settings by default; pause for selection only when explicitly requested. Skip minor follow-ups.
 ---
 
 # Codex Model Preflight
@@ -29,7 +29,7 @@ Default speed: Standard, where supported. Higher reasoning does not imply faster
 
 ## Keep the recommendation short
 
-Use three short lines, normally under 80 English words or 120 Chinese characters, plus a selection sentence when pausing:
+Use three short lines, normally under 80 English words or 120 Chinese characters, plus a brief execution-status sentence when needed:
 
 > Routine · GPT-6.1 Sol / Medium / Standard, if available.
 > Why: a bounded feature with clear requirements and ordinary tests.
@@ -37,10 +37,18 @@ Use three short lines, normally under 80 English words or 120 Chinese characters
 
 Class labels and exact wording may vary. Give a direction, not a menu or a report. Do not scan unrelated files, query account usage, research models, or launch agents just to classify. Consult current official documentation only when a specific model uncertainty actually changes the advice.
 
-## Pause once, then respect the choice
+## Recommend without blocking the task
 
-For an unassessed substantial task, recommend and stop before substantive execution: “Choose the suggested settings, then reply ‘continue’, or say ‘continue with current settings’.” Do not treat silence as acceptance. This is a selection step, not a request to authorize work already requested.
+For a substantial task the user has asked you to perform, give the recommendation in a progress message and continue the original task in the same turn using the current session settings. Do not end the turn, open an answer-required question, or ask for “continue” solely to select a model. The recommendation is advisory; this default is not an inference of consent from silence. Where useful, say: “Suggested: balanced / Medium / Standard. Continuing with this session's current settings; no switch performed.”
 
-If the user has already chosen or accepted settings for this task, continue without another gate. “Continue”, “继续”, or “按当前设置继续” accepts execution; it does not prove a switch happened. An explicit “don't pause”, “直接做”, or advice-only preference means give the recommendation briefly and proceed. Remember that preference within the conversation; do not modify global settings to persist it.
+Continue even if the active model or reasoning effort cannot be verified, or appears different from the recommendation. Do not equate the recommendation or a global configuration default with the active session. Never claim a recommended tier is in effect merely because you are following its workflow. Do not modify global defaults, create a separate agent, or switch models as a workaround. If the current model actually cannot carry out a necessary step, explain that concrete limitation and continue independent work where possible.
 
-For a standalone model-advice question, answer without demanding a continuation. After acceptance, reassess only for a new outcome or a material difficulty change. Never claim “switched”, alter global configuration, or invoke another model as a workaround. Model selection remains with the user.
+If the user explicitly says “wait for me to choose”, “先等我选档”, or otherwise requires selection before work, recommend and pause once. Honor a user stop or pending choice; elapsed time alone never overrides it. “Continue”, “继续”, or “按当前设置继续” resumes the original task without another selection gate or an assertion that a switch happened. An explicit no-pause preference continues to apply within the conversation. Only a new outcome or material difficulty change justifies reassessment; it does not itself require a pause.
+
+For an advice-only question, answer the question and stop normally. Do not start an unrequested implementation merely to avoid a pause. Required permissions, genuinely necessary missing inputs, and host safety checks remain separate from model advice; do not convert silence or a timeout into their approval.
+
+## Requests to continue after one minute
+
+This instruction-only skill provides no durable timer, response listener, model-selection control, or wake-up after a completed turn. Do not promise “I will resume in 60 seconds”, finish the turn hoping to wake later, sleep or poll solely for selection, or create recurring automation to emulate this behavior.
+
+When the user wants a one-minute fallback to avoid stalled work, explain the limitation briefly and use the non-blocking default: continue now with the current session settings. If they explicitly require the actual timed wait or automatic switching, state that it needs a separate host integration; respect an explicit manual-wait requirement instead of silently substituting immediate execution. A real implementation would need a persistent deadline, reply/cancel handling, turn-state checks, and a supported model-setting interface. None is supplied by this package.

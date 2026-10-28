@@ -37,18 +37,18 @@ durations=[4500,6500,4500,4500,5000,5000]
 scenes={
  'en': [
   ('A new task', 'USER', 'Build a CSV import feature with required-column validation and ordinary tests.', 'A bounded task. Start with a direction.'),
-  ('A short recommendation', 'PREFLIGHT', 'Routine · GPT-6.1 Sol / Medium / Standard, if available.\nWhy: clear scope and familiar validation.\nEscalate if conflicting requirements emerge.', 'Choose settings, then continue. Or keep current settings.'),
-  ('You choose', 'MANUAL ACTION', 'Select your preferred model and effort in the client. The skill does not control the model picker.', 'A suggestion, with the choice in your hands.'),
-  ('One word is enough', 'USER', 'Continue.', 'Accept execution. No assertion that a switch was verified.'),
-  ('Back to work', 'EXPECTED BEHAVIOR', 'Proceed with the original implementation and its required checks, without another model-selection question.', 'One selection step for this task.'),
+  ('A short recommendation', 'PREFLIGHT', 'Routine · GPT-6.1 Sol / Medium / Standard, if available.\nWhy: clear scope and familiar validation.\nEscalate if conflicting requirements emerge.', 'Advisory only. Continue now with current session settings.'),
+  ('Work continues', 'EXPECTED BEHAVIOR', 'Begin the original implementation and required checks in the same turn. No reply is needed to unblock model selection.', 'Current session settings stay in effect.'),
+  ('No automatic switch', 'BOUNDARY', 'The skill recommends settings; it does not control the model picker or wake up sixty seconds after a finished turn.', 'No timer, background service, or automatic model change.'),
+  ('Want a selection pause?', 'OPTIONAL USER CHOICE', 'Say “wait for me to choose” before work. The assistant waits; “continue” resumes without another selection gate.', 'Pause only when explicitly requested.'),
   ('Small follow-up', 'USER', 'Rename this one heading.\n\nExpected: make the small edit, without a fresh preflight.', 'Model choice, before the work starts.')
  ],
  'zh': [
   ('一个独立大任务', '用户', '做一个CSV导入功能，包含必填列校验和常规测试。', '边界明确的任务，先给一个起步方向。'),
-  ('三行选型建议', 'PREFLIGHT', '常规 · GPT-6.1 Sol / Medium / Standard（如可用）\n理由：范围明确，主要是实现与校验。\n升级条件：出现冲突需求时再评估。', '选择后回复“继续”，也可按当前设置继续。'),
-  ('由你选择', '手动操作', '你在客户端选择模型和推理档位。\n技能不会控制选择器或替你切换。', '建议清楚，选择仍在你手里。'),
-  ('回复即可继续', '用户', '继续。', '接受执行，不声称已经验证模型切换。'),
-  ('回到原任务', '预期行为', '继续原来的实现和必要检查，\n不再重复询问本轮模型配置。', '这个任务只做一次选择。'),
+  ('三行选型建议', 'PREFLIGHT', '常规 · GPT-6.1 Sol / Medium / Standard（如可用）\n理由：范围明确，主要是实现与校验。\n升级条件：出现冲突需求时再评估。', '建议不阻塞：直接按当前会话配置继续。'),
+  ('不用回复，也继续做', '预期行为', '同一轮开始原任务的实现和必要检查，\n不再因等待选档回复而停工。', '保留当前会话配置，不声称自动切换。'),
+  ('建议与实际配置要分清', '能力边界', '本技能不控制模型选择器，\n也不能在回复结束60秒后自行唤醒。', '不空等、不装后台服务、不自动改模型。'),
+  ('需要时再等你选档', '可选手动模式', '明确说“先等我选档”，才暂停等待。\n回复“继续”后执行，不重复询问。', '尊重明确等待，也保留真正必要的授权。'),
   ('普通追问保持安静', '用户', '把这一个标题改一下。\n\n预期：直接处理小改，不重新分档。', '大任务开工前，给你一句有依据的建议。')
  ]}
 for lang, items in scenes.items():
@@ -74,8 +74,8 @@ for lang, items in scenes.items():
     frames[1].save(OUT/f'demo-{lang}-poster.png')
 
 cards={
- 'en': ('Before you run.', 'One brief model recommendation for a substantial Codex task.', ['One starting point','One selection step','Public rules + cases'], 'A small, instruction-only skill. No automatic switching or savings promise.'),
- 'zh': ('大任务，先选档。','开工前，给你一句有依据的模型与推理档位建议。',['给一个起步方向','大任务暂停一次','规则与案例公开'],'简约指令技能 · 用户手动选择模型 · 不承诺固定省额度比例')
+ 'en': ('Advice. Then work.', 'A brief recommendation, without a required reply.', ['One starting point','Work continues','Public rules + cases'], 'Current session settings. No automatic switch or savings promise.'),
+ 'zh': ('建议完，接着做。','开工前给出选档建议，默认按当前会话配置继续。',['给一个起步方向','无需回复才开工','规则与案例公开'],'简约指令技能 · 不自动切换模型 · 不承诺固定省额度比例')
 }
 for lang,(title,sub,cells,foot) in cards.items():
     im=Image.new('RGB',(1200,630),'#F3F3ED');d=ImageDraw.Draw(im)
@@ -87,7 +87,7 @@ for lang,(title,sub,cells,foot) in cards.items():
         d.rounded_rectangle((x,340,x+344,442),radius=16,fill='white')
         wrapped(d,txt,(x+20,374),font(23,True),304,'#254B39',8)
     wrapped(d,foot,(64,499),font(22),1070,'#52645A',10)
-    d.text((64,576),'v0.1.0  ·  MIT  ·  English / 简体中文',font=font(18),fill='#63716B')
+    d.text((64,576),'v0.2.0  ·  MIT  ·  English / 简体中文',font=font(18),fill='#63716B')
     im.save(OUT/f'social-card-{lang}.png')
 
 (OUT/'demo-scenes.json').write_text(json.dumps({'durations_ms':durations,'scenes':scenes},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')

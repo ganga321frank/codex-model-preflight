@@ -1,5 +1,20 @@
 # Validation status / 验证说明
 
+## v0.2.0 update on 2026-10-28
+
+This update changes interaction instructions, not runtime code. The checks below do not establish automatic discovery or reliable behavior across every client.
+
+- The public skill and project trigger were reviewed together against the old forced-selection pause. Personal rules were updated separately on the maintainer's machine; the public installer does not overwrite other users' personal instructions.
+- Skill Creator frontmatter/name validation passed for the public skill. Relative Markdown links resolve locally. All 18 authored cases were reviewed as reference expectations; they are not 18 model executions.
+- A manual installation into a fresh isolated project copied all four runtime files and matched the source hashes. Skill-only and friend-trial ZIP contents match those same files, and ZIP CRC checks passed.
+- Updated illustrative assets still say they are not a live recording. The model mapping remains dated 2026-10-22; it is not claimed to have been refreshed by this interaction change.
+- No fresh-chat model execution, one-minute wake-up, automatic switch, latency benchmark, or allowance-saving benchmark is claimed for this update. The six new cases are reference scenarios, not six completed inference tests.
+- Old project-level instructions or already-loaded conversations may still request a pause. Inspect overlapping rules and start a new chat to try the updated policy; restart the client if the updated skill is not detected.
+
+## Historical v0.1.0 checks
+
+The remainder records checks for the previously published version; it does not validate the changed v0.2.0 behavior.
+
 Package: **0.1.0**, assembled 2026-10-22–23. Model guide checked on 2026-10-22. Windows 11; Codex CLI **0.163.0-alpha.11**; Skills CLI **1.7.4**.
 
 ## Checks actually performed
